@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draw Circle</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="250" style="border:1px solid black;"></canvas>
+</body>
+</html>
+<script>
+    let myCanvas = document.getElementById('myCanvas');
+
+    class Circle {
+        constructor(x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+        }
+
+        render(canvas) {
+            let context = canvas.getContext('2d');
+            context.beginPath();
+            context.arc(this.x, this.y, this.radius, 0, 2* Math.PI );
+            context.fillStyle = this.color;
+            context.fill();
+            context.closePath();
+        }
+    }
+
+    let arc1 = new Circle(10, 10, 100, '#000000');
+    arc1.render(myCanvas);
+
+</script>

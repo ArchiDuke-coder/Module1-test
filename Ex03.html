@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Fibonacci</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    function isFibonacci(num){
+        let check = false;
+        let f1 = 0;
+        let f2 = 1;
+        if (num == f1){
+            check = true;
+        }
+        while (f2 <= num){
+            if (f2 == num ){
+                check = true;
+                break;
+            } else {
+                let temp = f1+f2;
+                f1 = f2;
+                f2 = temp;
+            }
+        }
+        return check;
+    }
+
+    alert(isFibonacci(6765)); //true
+    alert(isFibonacci(5702887)); //true
+    alert(isFibonacci(10000000)); //false
+    alert(isFibonacci(1)); //true
+    alert(isFibonacci(0)); //true
+    alert(isFibonacci(4)); //false
+
+</script>
